@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redBackground"
+    tools:context=".view.ViewSessionsActivity"
+    >
+
+    <TextView
+        android:id="@+id/dayTitle"
+        android:layout_width="330dp"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:fontFamily="@font/charleswrightbold"
+        android:inputType=""
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:singleLine="true"
+        android:text="Choose a Cycle"
+        android:textAlignment="center"
+        android:textColor="@color/whiteLight"
+        android:textSize="40sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="393dp"
+        android:layout_height="692dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.869">
+
+        <ListView
+            android:id="@+id/tSessionsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/berlinsans"
+            android:inputType=""
+            android:shadowColor="@color/text_shadow"
+            android:shadowDx="4"
+            android:shadowDy="2"
+            android:shadowRadius="5"
+            android:singleLine="true"
+            android:textColor="@color/whiteLight"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

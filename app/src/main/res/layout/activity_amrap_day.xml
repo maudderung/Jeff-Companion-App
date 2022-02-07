@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redBackground"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
+    tools:context=".view.train.amrapDayActivity">
+
+    <Button
+        android:id="@+id/viewPrevBtn2"
+        android:layout_width="243dp"
+        android:layout_height="55dp"
+        android:text="View Previous session"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.482" />
+
+    <Button
+        android:id="@+id/viewProgramBtn2"
+        android:layout_width="176dp"
+        android:layout_height="55dp"
+        android:text="View Program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.917"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
+
+    <Button
+        android:id="@+id/calcBtn2"
+        android:layout_width="176dp"
+        android:layout_height="55dp"
+        android:text="Calculator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
+
+    <TextView
+        android:id="@+id/dayTitle"
+        android:layout_width="330dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:fontFamily="@font/charleswrightbold"
+        android:inputType=""
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:singleLine="true"
+        android:text="AMRAP "
+        android:textAlignment="center"
+        android:textColor="@color/whiteLight"
+        android:textSize="40sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/upr1"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <EditText
+        android:id="@+id/kg1"
+        android:layout_width="66dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  kg"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <EditText
+        android:id="@+id/reps1"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="264dp"
+        android:ems="10"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <EditText
+        android:id="@+id/upr2"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <EditText
+        android:id="@+id/kg2"
+        android:layout_width="66dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  kg"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <EditText
+        android:id="@+id/reps2"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="264dp"
+        android:ems="10"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
+
+    <EditText
+        android:id="@+id/upr3"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/kg3"
+        android:layout_width="66dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  kg"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/reps3"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="264dp"
+        android:ems="10"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/upr4"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:fontFamily="sans-serif"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <EditText
+        android:id="@+id/kg4"
+        android:layout_width="66dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="  kg"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <EditText
+        android:id="@+id/reps4"
+        android:layout_width="105dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="264dp"
+        android:ems="10"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

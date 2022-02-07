@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Jeff Nippard</string>
+    <string name="view_program">View Program</string>
+    <string name="train">Train</string>
+    <string name="calculator">Calculator</string>
+    <string name="soon">Soon</string>
+    <string name="training_sessions">Training Sessions</string>
+    <string name="title_activity_train">TrainActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="one_rep_max_calculator">One Rep Max Calculator</string>
+    <string name="kilograms">Kilograms</string>
+    <string name="reps">Reps</string>
+    <string name="calculate">Calculate</string>
+    <string name="one_rep_max">One Rep Max:</string>
+    <string name="working_set_calculator">Working Set Calculator</string>
+    <string name="working_set">Working Set:</string>
+    <string name="percentage">Percentage</string>
+
+    <string-array name="rpe_spinner">
+        <item>RPE</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+</resources>
