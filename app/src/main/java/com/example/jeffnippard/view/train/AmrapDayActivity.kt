@@ -62,6 +62,7 @@ class amrapDayActivity : AppCompatActivity() {
         reps2.hint="2x12"
         reps3.hint="4x12"
         reps4.hint="3x12"
+
         kg1.hint="90%"
     }
     fun setDay2(){
@@ -187,7 +188,8 @@ class amrapDayActivity : AppCompatActivity() {
             ex = Exercise()
             ex.name = name.text.toString()
             if (kg.text.isNotEmpty()) {//check for empty fields
-                ex.kg = kg.text.toString().toDouble()
+                if(!kg.text.toString().equals("."))
+                    ex.kg = kg.text.toString().toDouble()
             } else {
                 ex.kg = 0.0
             }
@@ -287,11 +289,9 @@ class amrapDayActivity : AppCompatActivity() {
         val strings = getSplitStrings(text)
         exercise.name = strings.get(0)
         exercise.kg = strings.get(1).toDouble()
-        if (exercise.kg != 0.0) {
-            exercise.reps = strings.get(2)
-        } else {
+        exercise.reps = strings.get(2)
+        if(exercise.reps.equals(""))
             exercise.reps = "empty"
-        }
         return exercise
     }
 

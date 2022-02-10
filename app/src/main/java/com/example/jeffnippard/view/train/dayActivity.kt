@@ -171,7 +171,7 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "3x 8-10"
 
         kg1.hint = "80%"
-        kg2.hint = "87.5%"
+        kg2.hint = "85%"
         kg3.hint = "67.5%"
         kg6.hint = "  kg"
         kg7.hint = "  kg"
@@ -259,8 +259,9 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "2x 12-15"
         reps8.hint = "2x 8-10"
 
-        kg1.hint = "75%"
-        kg2.hint = "75%"
+        kg6.hint = "  kg"
+        kg7.hint = "  kg"
+        kg8.hint = "  kg"
     }
 
     fun setWeek3Day1() {
@@ -272,7 +273,7 @@ class dayActivity : AppCompatActivity() {
         reps5.hint = "3x 12-15"
         reps6.hint = "2x 20-25"
 
-        kg1.hint = "77.5%"
+        kg1.hint = "75%"
         kg2.hint = "75%"
         kg3.hint = "72.5%"
         kg6.hint = "  kg"
@@ -286,7 +287,7 @@ class dayActivity : AppCompatActivity() {
         reps4.hint = "2x 15-20"
         reps5.hint = "3x 5-8"
         reps6.hint = "3x 10-12"
-        reps7.hint = "3x 8"
+        reps7.hint = "3x8"
 
         kg1.hint = "85%"
         kg2.hint = "75-80%"
@@ -329,12 +330,12 @@ class dayActivity : AppCompatActivity() {
         upr6.setText("6.Hanging Leg Raise")
         reps1.hint = "1x2"
         reps2.hint = "3x3"
-        reps3.hint = "2x 8"
+        reps3.hint = "2x8"
         reps4.hint = "3x 6-8"
         reps5.hint = "3x 8-10"
         reps6.hint = "3x 10-12"
 
-        kg1.hint = "92.5%"
+        kg1.hint = "90%"
         kg2.hint = "80%"
         kg6.hint = "  kg"
 
@@ -365,9 +366,7 @@ class dayActivity : AppCompatActivity() {
         reps8.hint = "3x 12-15"
 
 
-        kg1.hint = "  kg"
-        kg2.hint = "  kg"
-        kg4.hint = "80%"
+        kg3.hint = "80%"
         kg6.hint = "  kg"
         kg7.hint = "  kg"
         kg8.hint = "  kg"
@@ -409,8 +408,8 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "2x 12-15"
         reps8.hint = "3x 8-10"
 
-        kg7.hint = "  kg"
         kg6.hint = "  kg"
+        kg7.hint = "  kg"
         kg8.hint = "  kg"
     }
 
@@ -423,7 +422,7 @@ class dayActivity : AppCompatActivity() {
         reps5.hint = "3x 12-15"
         reps6.hint = "2x 20-25"
 
-        kg1.hint = "87.5%"
+        kg1.hint = "85%"
         kg2.hint = "80%"
         kg3.hint = "75%"
         kg6.hint = "  kg"
@@ -437,7 +436,7 @@ class dayActivity : AppCompatActivity() {
         reps4.hint = "3x 15-20"
         reps5.hint = "3x 5-8"
         reps6.hint = "3x 10-12"
-        reps7.hint = "3x 8-10"
+        reps7.hint = "3x8"
 
         kg1.hint = "85%"
         kg2.hint = "87.5%"
@@ -509,8 +508,7 @@ class dayActivity : AppCompatActivity() {
 
 
         kg1.hint = "77.5%"
-        kg2.hint = "  kg"
-        kg4.hint = "82.5%"
+        kg3.hint = "82.5%"
         kg6.hint = "  kg"
         kg7.hint = "  kg"
         kg8.hint = "  kg"
@@ -531,14 +529,16 @@ class dayActivity : AppCompatActivity() {
 
         reps1.hint = "1x1"
         reps2.hint = "2x7"
-        reps3.hint = "2x 10"
+        reps3.hint = "2x10"
         reps4.hint = "2x 12-15"
         reps5.hint = "3x 15-20"
         reps6.hint = "3x 15-20"
         reps7.hint = "3x 12-15"
 
         kg1.hint = "90-95%"
-        kg6.hint = "75%"
+        kg2.hint = "75%"
+        kg6.hint = "  kg"
+        kg7.hint = "  kg"
     }
 
     fun setWeek6Day4() {
@@ -555,15 +555,15 @@ class dayActivity : AppCompatActivity() {
 
         reps1.hint = "3x8"
         reps2.hint = "2x10"
-        reps3.hint = "2x 6"
-        reps4.hint = "2x 10"
+        reps3.hint = "3x6"
+        reps4.hint = "2x10"
         reps5.hint = "2x 15-20"
         reps6.hint = "2x 15-20"
         reps7.hint = "2x 12-15"
-        reps8.hint = "3x 8-10"
+        reps8.hint = "2x 8-10"
 
-        kg7.hint = "  kg"
         kg6.hint = "  kg"
+        kg7.hint = "  kg"
         kg8.hint = "  kg"
     }
 
@@ -665,10 +665,7 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "3x 12-15"
         reps8.hint = "3x 12-15"
 
-
-        kg1.hint = "  kg"
-        kg2.hint = "  kg"
-        kg4.hint = "82.5%"
+        kg3.hint = " 82.5%"
         kg6.hint = "  kg"
         kg7.hint = "  kg"
         kg8.hint = "  kg"
@@ -711,6 +708,7 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "3x 12-15"
         reps8.hint = "3x 8-10"
 
+        kg6.hint = "  kg"
         kg7.hint = "  kg"
         kg6.hint = "  kg"
         kg8.hint = "  kg"
@@ -726,7 +724,7 @@ class dayActivity : AppCompatActivity() {
         reps5.hint = "2x 12-15"
         reps6.hint = "2x 20-25"
 
-        kg1.hint = "92.5%"
+        kg1.hint = "90%"
         kg2.hint = "100%"
         kg3.hint = "80%"
         kg6.hint = "  kg"
@@ -743,7 +741,7 @@ class dayActivity : AppCompatActivity() {
         reps7.hint = "3x 8"
 
         kg1.hint = "80%"
-        kg2.hint = "92.5%"
+        kg2.hint = "90%"
         kg3.hint = "87.5%"
         kg6.hint = "  kg"
         kg7.hint = "  kg"
@@ -1042,9 +1040,9 @@ class dayActivity : AppCompatActivity() {
     fun setExercise(upr: TextView, reps: EditText, kg: EditText, exercise: Exercise) {
         upr.text = exercise.name
         if(!exercise.reps.equals("empty"))
-        reps.setText(exercise.reps)
+            reps.setText(exercise.reps)
         if(exercise.kg!=0.0)
-        kg.setText(exercise.kg.toString())
+            kg.setText(exercise.kg.toString())
     }
 
     fun collect(name: EditText, kg: EditText, reps: EditText, exerciseList: ArrayList<Exercise>) {
@@ -1052,6 +1050,7 @@ class dayActivity : AppCompatActivity() {
             ex = Exercise()
             ex.name = name.text.toString()
             if (kg.text.isNotEmpty()) {//check for empty fields
+                if(!kg.text.toString().equals("."))
                 ex.kg = kg.text.toString().toDouble()
             } else {
                 ex.kg = 0.0
@@ -1152,11 +1151,9 @@ class dayActivity : AppCompatActivity() {
         val strings = getSplitStrings(text)
         exercise.name = strings.get(0)
         exercise.kg = strings.get(1).toDouble()
-        if (exercise.kg != 0.0) {
-            exercise.reps = strings.get(2)
-        } else {
+        exercise.reps = strings.get(2)
+        if(exercise.reps.equals(""))
             exercise.reps = "empty"
-        }
         return exercise
     }
 

@@ -136,18 +136,14 @@ class viewDayActivity : AppCompatActivity() {
         }
     }
 
-    fun stringToExercise(text: String): Exercise{
-        val exercise=Exercise()
-        val strings=getSplitStrings(text)
-        exercise.name=strings.get(0)
-        exercise.kg=strings.get(1).toDouble()
-        if(exercise.kg!=0.0) {
-            exercise.reps = strings.get(2)
-        }else{
-            exercise.reps="empty"
-        }
+    fun stringToExercise(text: String): Exercise {
+        val exercise = Exercise()
+        val strings = getSplitStrings(text)
+        exercise.name = strings.get(0)
+        exercise.kg = strings.get(1).toDouble()
+        exercise.reps = strings.get(2)
         if(exercise.reps.equals(""))
-            exercise.reps="empty"
+            exercise.reps = "empty"
         return exercise
     }
 
