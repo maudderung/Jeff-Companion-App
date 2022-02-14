@@ -8,7 +8,6 @@ import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import java.io.File
-import java.io.FilenameFilter
 
 
 class ViewSessionsActivity : AppCompatActivity() {
@@ -28,7 +27,7 @@ class ViewSessionsActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         listView.onItemClickListener =
-            AdapterView.OnItemClickListener { parent, view, position, id ->
+            AdapterView.OnItemClickListener { parent, _, position, _ ->
                 val selectedItem = parent.getItemAtPosition(position)
                 if(selectedItem.toString().startsWith("Week")){
                     val intent= Intent(this, viewDayActivity::class.java)
@@ -49,16 +48,11 @@ class ViewSessionsActivity : AppCompatActivity() {
 
 
     }
-    fun returnCycle(filesDir: File): Array<String> {
-        val directories = filesDir.list(object : FilenameFilter {
-            override fun accept(current: File?, name: String?): Boolean {
-                return File(current, name).isDirectory
-            }
-        })
-        return directories
+    private fun returnCycle(filesDir: File): Array<String> {
+        return filesDir.list { current, name -> File(current, name).isDirectory }
     }
-    fun openCycle(selection: Any, sessions: ArrayList<String>){
-        File(filesDir.toString()+"/"+ selection).listFiles().forEach {
+    private fun openCycle(selection: Any, sessions: ArrayList<String>){
+        File("$filesDir/$selection").listFiles().forEach {
             sessions.add(File(it.toString()).name.substring(0,File(it.toString()).name.length-4))
             sessions.sort()
         }

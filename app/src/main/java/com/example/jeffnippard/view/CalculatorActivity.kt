@@ -10,12 +10,12 @@ import java.math.BigDecimal
 import java.math.RoundingMode
 
 class CalculatorActivity : AppCompatActivity() {
-     lateinit var kgField:EditText
-     lateinit var repsField:EditText
-     lateinit var oneRepMaxField:EditText
-     lateinit var percentageField:EditText
-     lateinit var oneRepMaxLabel:TextView
-     lateinit var workingSetLabel:TextView
+     private lateinit var kgField:EditText
+     private lateinit var repsField:EditText
+     private lateinit var oneRepMaxField:EditText
+     private lateinit var percentageField:EditText
+     private lateinit var oneRepMaxLabel:TextView
+     private lateinit var workingSetLabel:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,34 +62,32 @@ class CalculatorActivity : AppCompatActivity() {
             workingSetLabel.text=label
         }
     }
-    fun calculateOneRepMax(reps: Int,kgs: Double): Double {
-        val oneRepMax: Double
-        when (reps) {
-            1 -> oneRepMax = kgs
-            2 -> oneRepMax = kgs * reps * (119.toDouble() / 226)
-            3 -> oneRepMax = kgs * reps * (122.toDouble() / 339)
-            4 -> oneRepMax = kgs * reps * (63.toDouble() / 226)
-            5 -> oneRepMax = kgs * reps * (26.toDouble() / 113)
-            6 -> oneRepMax = kgs * reps * (133.toDouble() / 678)
-            7 -> oneRepMax = kgs * reps * (136.toDouble() / 791)
-            8 -> oneRepMax = kgs * reps * (141.toDouble() / 904)
-            9 -> oneRepMax = kgs * reps * (49.toDouble() / 339)
-            10 -> oneRepMax = kgs * reps * (151.toDouble() / 1130)
-             else -> oneRepMax = 0.00
+    private fun calculateOneRepMax(reps: Int, kgs: Double): Double {
+        val oneRepMax: Double = when (reps) {
+            1 -> kgs
+            2 -> kgs * reps * (119.toDouble() / 226)
+            3 -> kgs * reps * (122.toDouble() / 339)
+            4 -> kgs * reps * (63.toDouble() / 226)
+            5 -> kgs * reps * (26.toDouble() / 113)
+            6 -> kgs * reps * (133.toDouble() / 678)
+            7 -> kgs * reps * (136.toDouble() / 791)
+            8 -> kgs * reps * (141.toDouble() / 904)
+            9 -> kgs * reps * (49.toDouble() / 339)
+            10 -> kgs * reps * (151.toDouble() / 1130)
+            else -> 0.00
         }
         return roundOffDecimal(oneRepMax).toDouble()
     }
 
-    fun calculateWorkingSet(orm: Double,percentage: Double): Double {
-        if(percentage>=1 && percentage<=100)
-            return roundOffDecimal(orm*(percentage/100)).toDouble()
+    private fun calculateWorkingSet(orm: Double, percentage: Double): Double {
+        return if(percentage in 1.0..100.0)
+            roundOffDecimal(orm*(percentage/100)).toDouble()
         else
-            return 0.0
+            0.0
     }
 
-    fun roundOffDecimal(number: Double): BigDecimal{
+    private fun roundOffDecimal(number: Double): BigDecimal {
         val bd = BigDecimal(number)
-        val roundoff = bd.setScale(2, RoundingMode.CEILING)
-        return roundoff
+        return bd.setScale(2, RoundingMode.CEILING)
     }
 }

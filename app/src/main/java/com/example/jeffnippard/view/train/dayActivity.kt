@@ -2,8 +2,10 @@ package com.example.jeffnippard.view.train
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import com.example.jeffnippard.controller.WeekInfo
@@ -17,41 +19,44 @@ import java.util.*
 import kotlin.concurrent.thread
 
 
+@Suppress("SpellCheckingInspection")
 class dayActivity : AppCompatActivity() {
-    var inActivity = false
-    var freshlyOpened = true
-    lateinit var dateString: String
-    var ex = Exercise()
-    val date = SimpleDateFormat("dd.MM.yy")
-    lateinit var upr1: EditText
-    lateinit var upr2: EditText
-    lateinit var upr3: EditText
-    lateinit var upr4: EditText
-    lateinit var upr5: EditText
-    lateinit var upr6: EditText
-    lateinit var upr7: EditText
-    lateinit var upr8: EditText
-    lateinit var upr9: EditText
-    lateinit var reps1: EditText
-    lateinit var reps2: EditText
-    lateinit var reps3: EditText
-    lateinit var reps4: EditText
-    lateinit var reps5: EditText
-    lateinit var reps6: EditText
-    lateinit var reps7: EditText
-    lateinit var reps8: EditText
-    lateinit var reps9: EditText
-    lateinit var kg1: EditText
-    lateinit var kg2: EditText
-    lateinit var kg3: EditText
-    lateinit var kg4: EditText
-    lateinit var kg5: EditText
-    lateinit var kg6: EditText
-    lateinit var kg7: EditText
-    lateinit var kg8: EditText
-    lateinit var kg9: EditText
+    private var exerciseList = ArrayList<Exercise>()
+    private var day : String? = ""
+    private var inActivity = false
+    private var freshlyOpened = true
+    private lateinit var dateString: String
+    private var ex = Exercise()
+    private val date = SimpleDateFormat("dd.MM.yy")
+    private lateinit var upr1: EditText
+    private lateinit var upr2: EditText
+    private lateinit var upr3: EditText
+    private lateinit var upr4: EditText
+    private lateinit var upr5: EditText
+    private lateinit var upr6: EditText
+    private lateinit var upr7: EditText
+    private lateinit var upr8: EditText
+    private lateinit var upr9: EditText
+    private lateinit var reps1: EditText
+    private lateinit var reps2: EditText
+    private lateinit var reps3: EditText
+    private lateinit var reps4: EditText
+    private lateinit var reps5: EditText
+    private lateinit var reps6: EditText
+    private lateinit var reps7: EditText
+    private lateinit var reps8: EditText
+    private lateinit var reps9: EditText
+    private lateinit var kg1: EditText
+    private lateinit var kg2: EditText
+    private lateinit var kg3: EditText
+    private lateinit var kg4: EditText
+    private lateinit var kg5: EditText
+    private lateinit var kg6: EditText
+    private lateinit var kg7: EditText
+    private lateinit var kg8: EditText
+    private lateinit var kg9: EditText
 
-    fun setFBday1() {
+    private fun setFBday1() {
         upr1.setText("1.Back Squat")
         upr2.setText("2.Back Squat")
         upr3.setText("3.Overhead Press")
@@ -60,7 +65,7 @@ class dayActivity : AppCompatActivity() {
         upr6.setText("6.Hammer Curl")
     }
 
-    fun setFBday2() {
+    private fun setFBday2() {
         upr1.setText("1.Deadlift")
         upr2.setText("2.Barbell Bench Press")
         upr2.textSize = 13.5F
@@ -73,7 +78,7 @@ class dayActivity : AppCompatActivity() {
         upr7.textSize = 13.5F
     }
 
-    fun setFBday3() {
+    private fun setFBday3() {
         upr1.setText("1.Back Squat")
         upr2.setText("2.Weighted Dip")
         upr3.setText("3.Hanging Leg Raise")
@@ -83,7 +88,7 @@ class dayActivity : AppCompatActivity() {
         upr6.setText("6.Face Pull")
     }
 
-    fun setFBday4() {
+    private fun setFBday4() {
         upr1.setText("1.Pause Deadlift")
         upr2.setText("2.Pause Barbell Bench Press")
         upr2.textSize = 11.5F
@@ -95,7 +100,7 @@ class dayActivity : AppCompatActivity() {
         upr5.setText("5.Dumbbell Shrug")
     }
 
-    fun setULday1() {
+    private fun setULday1() {
         upr1.setText("1.Deadlift")
         upr2.setText("2.Pause Hi-Bar Squat")
         upr3.setText("3.Leg Curl")
@@ -104,7 +109,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setULday2() {
+    private fun setULday2() {
         upr1.setText("1.Barbell Bench Press")
         upr1.textSize = 13.5F
         upr2.setText("2.Barbell Bench Press")
@@ -122,7 +127,7 @@ class dayActivity : AppCompatActivity() {
         upr9.textSize = 12F
     }
 
-    fun setULday3() {
+    private fun setULday3() {
         upr1.setText("1.Back Squat")
         upr2.setText("2.Snatch-Grip RDL")
         upr3.setText("3.Leg Extension")
@@ -133,7 +138,7 @@ class dayActivity : AppCompatActivity() {
         upr6.textSize = 13.0F
     }
 
-    fun setULday4() {
+    private fun setULday4() {
         upr1.setText("1.Close-Grip Bench Press")
         upr1.textSize = 13.0F
         upr2.setText("2.Pendlay Row")
@@ -145,7 +150,7 @@ class dayActivity : AppCompatActivity() {
         upr8.setText("8.B2. Skull Crusher")
     }
 
-    fun setWeek1Day1() {
+    private fun setWeek1Day1() {
         setFBday1()
         reps1.hint = "1x5"
         reps2.hint = "2x8"
@@ -160,7 +165,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek1Day2() {
+    private fun setWeek1Day2() {
         setFBday2()
         reps1.hint = "3x4"
         reps2.hint = "1x3"
@@ -177,7 +182,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek1Day3() {
+    private fun setWeek1Day3() {
         setFBday3()
         reps1.hint = "3x4"
         reps2.hint = "3x8"
@@ -190,7 +195,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek1Day4() {
+    private fun setWeek1Day4() {
         setFBday4()
         reps1.hint = "4x2"
         reps2.hint = "3x5"
@@ -202,7 +207,7 @@ class dayActivity : AppCompatActivity() {
         kg2.hint = "75%"
     }
 
-    fun setWeek2Day1() {
+    private fun setWeek2Day1() {
         setULday1()
         reps1.hint = "3x3"
         reps2.hint = "2x8"
@@ -214,7 +219,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek2Day2() {
+    private fun setWeek2Day2() {
         setULday2()
         reps1.hint = "1x2"
         reps2.hint = "3x6"
@@ -235,7 +240,7 @@ class dayActivity : AppCompatActivity() {
         kg9.hint = "  kg"
     }
 
-    fun setWeek2Day3() {
+    private fun setWeek2Day3() {
         setULday3()
         reps1.hint = "3x6"
         reps2.hint = "3x10"
@@ -248,7 +253,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek2Day4() {
+    private fun setWeek2Day4() {
         setULday4()
         reps1.hint = "3x12"
         reps2.hint = "3x10"
@@ -264,7 +269,7 @@ class dayActivity : AppCompatActivity() {
         kg8.hint = "  kg"
     }
 
-    fun setWeek3Day1() {
+    private fun setWeek3Day1() {
         setFBday1()
         reps1.hint = "1x8"
         reps2.hint = "2x6"
@@ -279,7 +284,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek3Day2() {
+    private fun setWeek3Day2() {
         setFBday2()
         reps1.hint = "4x2"
         reps2.hint = "1x6"
@@ -296,7 +301,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek3Day3() {
+    private fun setWeek3Day3() {
         setFBday3()
         reps1.hint = "4x4"
         reps2.hint = "3x8"
@@ -309,7 +314,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek3Day4() {
+    private fun setWeek3Day4() {
         setFBday4()
         reps1.hint = "4x2"
         reps2.hint = "4x5"
@@ -321,7 +326,7 @@ class dayActivity : AppCompatActivity() {
         kg2.hint = "75%"
     }
 
-    fun setWeek4Day1() {
+    private fun setWeek4Day1() {
         upr1.setText("1.Deadlift")
         upr2.setText("2.Deadlift")
         upr3.setText("3.Pause Hi-Bar Squat")
@@ -341,7 +346,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek4Day2() {
+    private fun setWeek4Day2() {
         upr1.setText("1.Flat-Back Bench Press")
         upr1.textSize = 13.5F
         upr2.setText("2.Chin-up")
@@ -373,7 +378,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek4Day3() {
+    private fun setWeek4Day3() {
         setULday3()
         upr2.setText("2.5' Block Pull")
         reps1.hint = "3x6"
@@ -387,7 +392,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek4Day4() {
+    private fun setWeek4Day4() {
         upr1.setText("1.Weighted Dip")
         upr2.setText("2.Pendlay Row")
         upr3.setText("3.Deficit Push-Up")
@@ -413,7 +418,7 @@ class dayActivity : AppCompatActivity() {
         kg8.hint = "  kg"
     }
 
-    fun setWeek5Day1() {
+    private fun setWeek5Day1() {
         setFBday1()
         reps1.hint = "1x3"
         reps2.hint = "2x4"
@@ -428,7 +433,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek5Day2() {
+    private fun setWeek5Day2() {
         setFBday2()
         reps1.hint = "3x3"
         reps2.hint = "1x4"
@@ -445,7 +450,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek5Day3() {
+    private fun setWeek5Day3() {
         setFBday3()
         reps1.hint = "3x6"
         reps2.hint = "3x8"
@@ -458,7 +463,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek5Day4() {
+    private fun setWeek5Day4() {
         setFBday4()
         reps1.hint = "4x2"
         reps2.hint = "3x6"
@@ -470,7 +475,7 @@ class dayActivity : AppCompatActivity() {
         kg2.hint = "75%"
     }
 
-    fun setWeek6Day1() {
+    private fun setWeek6Day1() {
         setULday1()
         reps1.hint = "3x4"
         reps2.hint = "2x8"
@@ -482,7 +487,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek6Day2() {
+    private fun setWeek6Day2() {
         upr1.setText("1.Barbell Bench Press")
         upr1.textSize = 13.5F
         upr2.setText("2.Chin-up")
@@ -515,7 +520,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek6Day3() {
+    private fun setWeek6Day3() {
         upr1.setText("1.Back Squat")
         upr2.setText("2.Low-Bar Back Squat")
         upr2.textSize = 12.5F
@@ -541,7 +546,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek6Day4() {
+    private fun setWeek6Day4() {
         upr1.setText("1.Barbell Floor Press")
         upr2.setText("2.Pendlay Row")
         upr3.setText("3.Weighted Dip")
@@ -567,7 +572,7 @@ class dayActivity : AppCompatActivity() {
         kg8.hint = "  kg"
     }
 
-    fun setWeek7Day1() {
+    private fun setWeek7Day1() {
         setFBday1()
         reps1.hint = "1x3"
         reps2.hint = "2x2"
@@ -582,7 +587,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek7Day2() {
+    private fun setWeek7Day2() {
         setFBday2()
         upr1.setText("1.Pause Deadlift")
 
@@ -601,7 +606,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek7Day3() {
+    private fun setWeek7Day3() {
         setFBday3()
         reps1.hint = "4x6"
         reps2.hint = "3x8"
@@ -614,7 +619,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek7Day4() {
+    private fun setWeek7Day4() {
         setFBday4()
         upr1.setText("1.Deadlift")
 
@@ -628,7 +633,7 @@ class dayActivity : AppCompatActivity() {
         kg2.hint = "75%"
     }
 
-    fun setWeek8Day1() {
+    private fun setWeek8Day1() {
         setULday1()
         reps1.hint = "3x5"
         reps2.hint = "2x8"
@@ -640,7 +645,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek8Day2() {
+    private fun setWeek8Day2() {
         upr1.setText("1.Flat-Back Bench Press")
         upr1.textSize = 13.5F
         upr2.setText("2.Chin-up")
@@ -672,7 +677,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun setWeek8Day3() {
+    private fun setWeek8Day3() {
         setULday3()
         upr1.setText("1.Low-Bar Squat")
         upr2.setText("2. 3' Block Pull")
@@ -687,7 +692,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek8Day4() {
+    private fun setWeek8Day4() {
         upr1.setText("1.DB Incline Press")
         upr2.setText("2.Pendlay Row")
         upr3.setText("3.Weighted Dip")
@@ -714,7 +719,7 @@ class dayActivity : AppCompatActivity() {
         kg8.hint = "  kg"
     }
 
-    fun setWeek9Day1() {
+    private fun setWeek9Day1() {
         setFBday1()
         upr2.setText("2.Squat Walk-Out")
         reps1.hint = "1x2"
@@ -730,7 +735,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek9Day2() {
+    private fun setWeek9Day2() {
         setFBday2()
         reps1.hint = "3x4"
         reps2.hint = "1x2"
@@ -747,7 +752,7 @@ class dayActivity : AppCompatActivity() {
         kg7.hint = "  kg"
     }
 
-    fun setWeek9Day3() {
+    private fun setWeek9Day3() {
         setFBday3()
         reps1.hint = "3x4"
         reps2.hint = "3x8"
@@ -760,7 +765,7 @@ class dayActivity : AppCompatActivity() {
         kg6.hint = "  kg"
     }
 
-    fun setWeek9Day4() {
+    private fun setWeek9Day4() {
         setFBday4()
         reps1.hint = "4x2"
         reps2.hint = "3x5"
@@ -772,7 +777,7 @@ class dayActivity : AppCompatActivity() {
         kg2.hint = "77.5%"
     }
 
-    fun findFields() {
+    private fun findFields() {
         upr1 = findViewById(R.id.upr1)
         upr2 = findViewById(R.id.upr2)
         upr3 = findViewById(R.id.upr3)
@@ -806,16 +811,15 @@ class dayActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_day)
-        freshlyOpened=true
-        inActivity = true
         val viewPrevBtn = findViewById<Button>(R.id.viewPrevBtn)
         val viewProgramBtn = findViewById<Button>(R.id.viewProgramBtn)
         val calcBtn = findViewById<Button>(R.id.calcBtn)
-        var exerciseList = ArrayList<Exercise>()
-        var dayTitle: TextView = findViewById(R.id.dayTitle)
-        val day = intent.getStringExtra("day")
+        val dayTitle: TextView = findViewById(R.id.dayTitle)
+        freshlyOpened=true
+        inActivity = true
+        day = intent.getStringExtra("day")
         findFields()
-        dayTitle.text = "${WeekInfo.week} ${day}"
+        dayTitle.text = "${WeekInfo.week} $day"
         when (WeekInfo.week) {
             "Week 1" -> {
                 when (day) {
@@ -963,26 +967,13 @@ class dayActivity : AppCompatActivity() {
             }
         }
         if(freshlyOpened){ //to populate the current day if out of activity
-            if(readFile(day,exerciseList))
-            setAllExercises(exerciseList)
+            if(readFile())
+            setAllExercises()
             freshlyOpened=false
         }
         thread {
             while (inActivity) {
-                    exerciseList.clear()
-                    collect(upr1, kg1, reps1, exerciseList)
-                    collect(upr2, kg2, reps2, exerciseList)
-                    collect(upr3, kg3, reps3, exerciseList)
-                    collect(upr4, kg4, reps4, exerciseList)
-                    collect(upr5, kg5, reps5, exerciseList)
-                    collect(upr6, kg6, reps6, exerciseList)
-                    collect(upr7, kg7, reps7, exerciseList)
-                    collect(upr8, kg8, reps8, exerciseList)
-                    collect(upr9, kg9, reps9, exerciseList)
-                    if (!isFileEqualToList(exerciseList, day!!)) {
-                        print(isFileEqualToList(exerciseList, day))
-                        write(exerciseList, day)
-                    }
+                threadWrite()
                 Thread.sleep(5000)//make 15s
             }
         }
@@ -992,7 +983,7 @@ class dayActivity : AppCompatActivity() {
             val intent= Intent(this, viewDayActivity::class.java)
             val extras = Bundle()
             extras.putString("cycle", "Cycle ${(WeekInfo.cycle-1)}")
-            extras.putString("day", "${WeekInfo.week} ${day}")
+            extras.putString("day", "${WeekInfo.week} $day")
             intent.putExtras(extras)
             startActivity(intent)}
             else{
@@ -1010,47 +1001,65 @@ class dayActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+        threadWrite()
         inActivity = false
         super.onBackPressed()
     }
 
-    fun setAllExercises(exerciseList: ArrayList<Exercise>) {
+    private fun threadWrite(){ //Collect all fields and write them to the file
+        exerciseList.clear()
+        collect(upr1, kg1, reps1)
+        collect(upr2, kg2, reps2)
+        collect(upr3, kg3, reps3)
+        collect(upr4, kg4, reps4)
+        collect(upr5, kg5, reps5)
+        collect(upr6, kg6, reps6)
+        collect(upr7, kg7, reps7)
+        collect(upr8, kg8, reps8)
+        collect(upr9, kg9, reps9)
+        if (!isFileEqualToList()) {
+            print(isFileEqualToList())
+            write()
+        }
+    }
+
+    private fun setAllExercises() {
         val size = exerciseList.size
         if (size > 0)
-            setExercise(upr1, reps1, kg1, exerciseList.get(0))
+            setExercise(upr1, reps1, kg1, exerciseList[0])
         if (size > 1)
-            setExercise(upr2, reps2, kg2, exerciseList.get(1))
+            setExercise(upr2, reps2, kg2, exerciseList[1])
         if (size > 2)
-            setExercise(upr3, reps3, kg3, exerciseList.get(2))
+            setExercise(upr3, reps3, kg3, exerciseList[2])
         if (size > 3)
-            setExercise(upr4, reps4, kg4, exerciseList.get(3))
+            setExercise(upr4, reps4, kg4, exerciseList[3])
         if (size > 4)
-            setExercise(upr5, reps5, kg5, exerciseList.get(4))
+            setExercise(upr5, reps5, kg5, exerciseList[4])
         if (size > 5)
-            setExercise(upr6, reps6, kg6, exerciseList.get(5))
+            setExercise(upr6, reps6, kg6, exerciseList[5])
         if (size > 6)
-            setExercise(upr7, reps7, kg7, exerciseList.get(6))
+            setExercise(upr7, reps7, kg7, exerciseList[6])
         if (size > 7)
-            setExercise(upr8, reps8, kg8, exerciseList.get(7))
+            setExercise(upr8, reps8, kg8, exerciseList[7])
         if (size > 8)
-            setExercise(upr9, reps9, kg9, exerciseList.get(8))
+            setExercise(upr9, reps9, kg9, exerciseList[8])
 
     }
 
-    fun setExercise(upr: TextView, reps: EditText, kg: EditText, exercise: Exercise) {
+    private fun setExercise(upr: TextView, reps: EditText, kg: EditText, exercise: Exercise) {
         upr.text = exercise.name
-        if(!exercise.reps.equals("empty"))
+        if(exercise.reps != "empty")
             reps.setText(exercise.reps)
         if(exercise.kg!=0.0)
             kg.setText(exercise.kg.toString())
     }
 
-    fun collect(name: EditText, kg: EditText, reps: EditText, exerciseList: ArrayList<Exercise>) {
-        if (!name.text.toString().equals(" ")) {
+    private fun collect(name: EditText, kg: EditText, reps: EditText) {
+        if (name.text.toString() != " ") {
             ex = Exercise()
             ex.name = name.text.toString()
             if (kg.text.isNotEmpty()) {//check for empty fields
-                if(!kg.text.toString().equals("."))
+                if(kg.text.toString() != ".")
                 ex.kg = kg.text.toString().toDouble()
             } else {
                 ex.kg = 0.0
@@ -1064,7 +1073,7 @@ class dayActivity : AppCompatActivity() {
         }
     }
 
-    fun makeDir(n: Int) {
+    private fun makeDir(n: Int) {
         val directory = File(applicationContext.filesDir.toString() + "/Cycle ${n}/")
         if (!directory.exists()) {
             directory.mkdir()
@@ -1072,7 +1081,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun write(exerciseList: ArrayList<Exercise>, day: String) {
+    private fun write() {
         makeDir(WeekInfo.cycle)
         File(
             applicationContext.filesDir.toString() + "/Cycle ${WeekInfo.cycle}/",
@@ -1089,10 +1098,7 @@ class dayActivity : AppCompatActivity() {
 
     }
 
-    fun isFileEqualToList(
-        exerciseList: ArrayList<Exercise>,
-        day: String,
-    ): Boolean {//checks if file info is different from the list
+    private fun isFileEqualToList(): Boolean {//checks if file info is different from the list
         makeDir(WeekInfo.cycle)
         if (File(
                 applicationContext.filesDir.toString() + "/Cycle ${WeekInfo.cycle}/",
@@ -1110,16 +1116,12 @@ class dayActivity : AppCompatActivity() {
                 it.readText()
             }
 
-            if (fileText.equals(listText)) {
-                return true //no changes
-            } else {
-                return false//changes
-            }
+            return fileText.equals(listText)
         } else
             return false
     }
 
-    fun readFile(day: String?, exerciseList: ArrayList<Exercise>): Boolean {
+    private fun readFile(): Boolean {
         if(File(applicationContext.filesDir.toString() + "/Cycle ${WeekInfo.cycle}/", "${WeekInfo.week} $day.txt").exists()) {
             exerciseList.clear()
             var line = 0
@@ -1134,7 +1136,7 @@ class dayActivity : AppCompatActivity() {
                 if (line == 0) {
                     dateString = s
                     line++
-                } else if (dateString.equals(date.format(Date()).toString())) {
+                } else if (dateString == date.format(Date()).toString()) {
                     ex = Exercise()
                     ex = stringToExercise(s)
                     exerciseList.add(ex)
@@ -1146,18 +1148,18 @@ class dayActivity : AppCompatActivity() {
         return false
     }
 
-    fun stringToExercise(text: String): Exercise {
+    private fun stringToExercise(text: String): Exercise {
         val exercise = Exercise()
         val strings = getSplitStrings(text)
-        exercise.name = strings.get(0)
-        exercise.kg = strings.get(1).toDouble()
-        exercise.reps = strings.get(2)
-        if(exercise.reps.equals(""))
+        exercise.name = strings[0]
+        exercise.kg = strings[1].toDouble()
+        exercise.reps = strings[2]
+        if(exercise.reps == "")
             exercise.reps = "empty"
         return exercise
     }
 
-    fun getSplitStrings(source: String): Array<String> {
+    private fun getSplitStrings(source: String): Array<String> {
         return source.split("; ").toTypedArray()
     }
 }

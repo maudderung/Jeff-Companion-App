@@ -50,12 +50,10 @@ class ProgramViewActivity : AppCompatActivity() {
             }
         }
 
-        val filePath:String
-        if(page==104){
-            filePath = getFileFromAssets(this, "Powerbuilding-System_4X.pdf").absolutePath
-        }
-        else{
-            filePath = getFileFromAssets(this, "compact.pdf").absolutePath
+        val filePath:String = if(page==104){
+            getFileFromAssets(this, "Powerbuilding-System_4X.pdf").absolutePath
+        } else{
+            getFileFromAssets(this, "compact.pdf").absolutePath
         }
         val pdf = File(filePath)
         val pdfView = findViewById<PDFView>(R.id.pdfView)

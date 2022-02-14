@@ -30,6 +30,7 @@ fun getFileFromAssets(context: Context, fileName: String): File = File(context.c
         }
     }
 
+@Suppress("SpellCheckingInspection")
 class Program : AppCompatActivity() {
     @SuppressLint("SimpleDateFormat")
     val date = SimpleDateFormat("dd.MM.yy")
@@ -120,8 +121,8 @@ class Program : AppCompatActivity() {
                 cont.setOnClickListener {
                     val intent = Intent(this, dayActivity::class.java)
                     initCycle(cycleInput)
-                    var day = continueWorkout()
-                    if(WeekInfo.week.equals("Week 10")){
+                    val day = continueWorkout()
+                    if(WeekInfo.week == "Week 10"){
                         Toast.makeText(this,"Week 10 not supported",Toast.LENGTH_SHORT).show()
                     }else{
                     intent.putExtra("day", day)
@@ -204,7 +205,7 @@ class Program : AppCompatActivity() {
         }
     }
 
-    fun initCycle(cycleInput: EditText) {
+    private fun initCycle(cycleInput: EditText) {
         val cycleFile = File(applicationContext.filesDir, "/cycleInfo.txt")
         if (!cycleFile.exists()) {//ako e pusnata za purvi put
             cycleFile.printWriter().use { out ->
@@ -219,7 +220,7 @@ class Program : AppCompatActivity() {
         }
     }
 
-    fun returnCycleFromFile(): Int {
+    private fun returnCycleFromFile(): Int {
         var cycle = 1
         val inputStream =
             File(applicationContext.filesDir.toString() + "/cycleInfo.txt").inputStream()
@@ -227,19 +228,19 @@ class Program : AppCompatActivity() {
         return cycle
     }
 
-    fun returnLastWorkout(): String {
+    private fun returnLastWorkout(): String {
         val sessions = ArrayList<String>()
-        var s: String
+        val s: String
         if(File(filesDir.toString() + "/Cycle ${WeekInfo.cycle}").listFiles().isNullOrEmpty()){
             WeekInfo.week = "Week 1"
             s="Week 1 Day 1"
         }else{
         File(filesDir.toString() + "/Cycle ${WeekInfo.cycle}").listFiles().forEach {
             sessions.add(File(it.toString()).name.substring(0, File(it.toString()).name.length - 4))
-            Collections.sort(sessions)
+            sessions.sort()
         }
-        s = sessions.get(sessions.size - 1)
-        if (s.substring(0, 7).equals("Week 10")) {
+        s = sessions[sessions.size - 1]
+        if (s.substring(0, 7) == "Week 10") {
             WeekInfo.week = "Week 10"
         } else {
             WeekInfo.week = s.substring(0, 6)
@@ -247,7 +248,7 @@ class Program : AppCompatActivity() {
         return s.substring(WeekInfo.week.length + 1, s.length)
     }
 
-    fun continueWorkout(): String {
+    private fun continueWorkout(): String {
         val dayToCheck = returnLastWorkout()
         var day: String
         var dateString = ""
@@ -267,11 +268,11 @@ class Program : AppCompatActivity() {
             if (date.format(Date()).equals(dateString)) {//if you're working out today
                 day = dayToCheck
             } else {
-                val num = dayToCheck.get(dayToCheck.length - 1)
+                val num = dayToCheck[dayToCheck.length - 1]
                 day = "Day ${num.digitToInt() + 1}"
-                if(day.equals("Day 5")){
+                if(day == "Day 5"){
                     day="Day 1"
-                    val n = WeekInfo.week.get(WeekInfo.week.length - 1)
+                    val n = WeekInfo.week[WeekInfo.week.length - 1]
                     WeekInfo.week = "Week ${n.digitToInt() + 1}"
                 }
             }
