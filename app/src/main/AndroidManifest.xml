@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.jeffnippard">
+    package="com.example.jeffnippard"
+    android:hasFragileUserData="true"
+    tools:targetApi="q">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -17,56 +19,64 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JeffNippard">
         <activity
-            android:name=".view.viewDayActivity"
-            android:exported="false"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".view.train.amrapDayActivity"
-            android:exported="false"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".view.train.amrapWeekActivity"
-            android:exported="false"
+            android:name=".view.mainMenu.removeWorkoutActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            />
+            android:exported="false" />
         <activity
-            android:name=".view.train.dayActivity"
-            android:exported="false"
+            android:name=".view.mainMenu.days12Activity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".view.train.week1Activity"
-            android:exported="false"
+            android:name=".view.mainMenu.Program"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".view.ProgramViewActivity"
-            android:exported="false"
+            android:name=".view.mainMenu.viewDayActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".view.ViewSessionsActivity"
-            android:exported="false"
+            android:name=".view.train.amrapDayActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".view.CalculatorActivity"
-            android:exported="false"
+            android:name=".view.train.amrapDaysActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".view.Program"
-            android:exported="false"
-            android:theme="@style/Theme.JeffNippard.NoActionBar"
+            android:name=".view.train.trainActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.train.daysActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.mainMenu.ProgramViewActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.mainMenu.ViewSessionsActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.mainMenu.CalculatorActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true"
             android:configChanges="orientation"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

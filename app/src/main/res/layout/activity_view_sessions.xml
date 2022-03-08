@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/redBackground"
-    tools:context=".view.ViewSessionsActivity"
+    tools:context=".view.mainMenu.ViewSessionsActivity"
     >
 
     <TextView
@@ -34,14 +34,15 @@
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="393dp"
-        android:layout_height="692dp"
+        android:id="@+id/constraintLayout3"
+        android:layout_width="390dp"
+        android:layout_height="581dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869">
+        app:layout_constraintVertical_bias="0.382">
 
         <ListView
             android:id="@+id/tSessionsList"
@@ -59,7 +60,31 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <Button
+        android:id="@+id/removeWorkoutBtn"
+        android:layout_width="365dp"
+        android:layout_height="53dp"
+        android:text="Remove a workout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+        app:layout_constraintVertical_bias="0.94" />
+
+    <Spinner
+        android:id="@+id/spinnerViewSessions"
+        android:layout_width="365dp"
+        android:layout_height="53dp"
+        android:contentDescription="Change Program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.607"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

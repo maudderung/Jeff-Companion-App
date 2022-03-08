@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/redBackground"
+    tools:context=".view.mainMenu.Program"
+    >
+
+    <ImageView
+        android:id="@+id/week2"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w2" />
+
+    <TextView
+        android:id="@+id/cycleLabel"
+        android:layout_width="41dp"
+        android:layout_height="33dp"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="Cycle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
+
+    <ImageView
+        android:id="@+id/cont"
+        android:layout_width="291dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.881"
+        app:srcCompat="@drawable/cont" />
+
+    <ImageView
+        android:id="@+id/week10"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w10" />
+
+    <ImageView
+        android:id="@+id/week9"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="508dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w9" />
+
+    <ImageView
+        android:id="@+id/week7"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="396dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w7" />
+
+    <ImageView
+        android:id="@+id/week8"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="396dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w8" />
+
+    <ImageView
+        android:id="@+id/week6"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w6" />
+
+    <ImageView
+        android:id="@+id/week5"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="284dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w5" />
+
+    <ImageView
+        android:id="@+id/week3"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="168dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w3" />
+
+    <ImageView
+        android:id="@+id/week4"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w4" />
+
+    <ImageView
+        android:id="@+id/week1"
+        android:layout_width="190dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/w1" />
+
+    <EditText
+        android:id="@+id/cycleInput"
+        android:layout_width="46dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="4"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.988"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="410dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="15dp"
+        android:contentDescription="Change Program"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
