@@ -5,63 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/redBackground"
-    tools:context=".view.MainActivity"
-    >
+    tools:context=".view.MainActivity">
 
 
     <ImageView
         android:id="@+id/bViewSessions"
-        android:layout_width="417dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="408dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/training_sessions"
         android:src="@drawable/viewsessions_pressable"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bCalculator"
+        app:layout_constraintDimensionRatio="41:16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bViewProgram"
         app:srcCompat="@drawable/viewsessions" />
 
     <ImageView
         android:id="@+id/bCalculator"
-        android:layout_width="416dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="588dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/calculator"
         android:src="@drawable/calculator_pressable"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="41:16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bViewSessions"
         app:srcCompat="@drawable/calculator"
         tools:srcCompat="@drawable/calculator" />
 
     <ImageView
         android:id="@+id/bTrain"
-        android:layout_width="417dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/train"
         android:src="@drawable/train_pressable"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bViewProgram"
+        app:layout_constraintDimensionRatio="41:16"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/train" />
 
     <ImageView
         android:id="@+id/bViewProgram"
-        android:layout_width="419dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="228dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/view_program"
         android:src="@drawable/viewprogram_pressable"
         android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/bViewSessions"
+        app:layout_constraintDimensionRatio="41:16"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bTrain"
         app:srcCompat="@drawable/viewprogram" />
 </androidx.constraintlayout.widget.ConstraintLayout>

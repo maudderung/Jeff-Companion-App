@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.train.daysActivity"
     android:background="@color/redBackground"
     android:configChanges="orientation"
-    android:screenOrientation="portrait">
+    android:screenOrientation="portrait"
+    tools:context=".view.train.daysActivity">
 
     <TextView
         android:id="@+id/weekTitle"
-        android:layout_width="330dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:ems="10"
         android:fontFamily="@font/charleswrightbold"
         android:inputType=""
@@ -27,49 +26,81 @@
         android:textColor="@color/whiteLight"
         android:textSize="40sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="342:70"
+        app:layout_constraintEnd_toEndOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        app:layout_constraintTop_toTopOf="@id/h1"
         tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/day1"
-        android:layout_width="277dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/day2"
+        app:layout_constraintDimensionRatio="300:80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weekTitle"
         app:srcCompat="@drawable/day1" />
 
     <ImageView
         android:id="@+id/day2"
-        android:layout_width="277dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="292dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/day3"
+        app:layout_constraintDimensionRatio="300:80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day1"
         app:srcCompat="@drawable/day2" />
 
     <ImageView
         android:id="@+id/day3"
-        android:layout_width="277dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="436dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
+        app:layout_constraintDimensionRatio="300:80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day2"
         app:srcCompat="@drawable/day3" />
 
     <ImageView
         android:id="@+id/day4"
-        android:layout_width="277dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="584dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/h2"
+        app:layout_constraintDimensionRatio="300:80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day3"
         app:srcCompat="@drawable/day4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
 </androidx.constraintlayout.widget.ConstraintLayout>

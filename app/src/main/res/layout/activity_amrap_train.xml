@@ -11,46 +11,52 @@
 
     <Button
         android:id="@+id/viewPrevBtn2"
-        android:layout_width="176dp"
-        android:layout_height="55dp"
-
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="0dp"
         android:text="View Previous session"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintBottom_toBottomOf="@id/buttonHorizontalGL"
+        app:layout_constraintDimensionRatio="35:11"
+        app:layout_constraintEnd_toStartOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toEndOf="@id/calcBtn2"
+        app:layout_constraintTop_toBottomOf="@id/viewProgramBtn2" />
+
 
     <Button
         android:id="@+id/viewProgramBtn2"
-        android:layout_width="243dp"
-        android:layout_height="55dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2.5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="View Program"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintBottom_toTopOf="@id/viewPrevBtn2"
+        app:layout_constraintDimensionRatio="36:11"
+        app:layout_constraintEnd_toStartOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@id/endHorizontal" />
 
     <Button
         android:id="@+id/calcBtn2"
-        android:layout_width="176dp"
-        android:layout_height="55dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
         android:text="Calculator"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.078"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintBottom_toBottomOf="@id/buttonHorizontalGL"
+        app:layout_constraintDimensionRatio="36:11"
+        app:layout_constraintEnd_toStartOf="@id/viewPrevBtn2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@id/viewProgramBtn2" />
+
 
     <TextView
         android:id="@+id/dayTitle"
-        android:layout_width="330dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:fontFamily="@font/charleswrightbold"
         android:inputType=""
         android:shadowColor="@color/text_shadow"
@@ -63,16 +69,17 @@
         android:textColor="@color/whiteLight"
         android:textSize="40sp"
         android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/startHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/titleEndGL"
+        app:layout_constraintStart_toStartOf="@id/titleStartGL"
+        app:layout_constraintTop_toBottomOf="@id/titleHorizontalGL"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/upr1"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="18:5"
         android:fontFamily="sans-serif"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
@@ -81,38 +88,34 @@
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintBottom_toTopOf="@+id/upr2"
+        app:layout_constraintEnd_toStartOf="@+id/kgStartGL"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/startHorizontal" />
 
     <EditText
         android:id="@+id/kg1"
-        android:layout_width="66dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="6:4.1"
         android:ems="10"
+        android:hint="  kg"
+        android:inputType="numberDecimal"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        android:hint="  kg"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintBottom_toTopOf="@+id/kg2"
+        app:layout_constraintEnd_toStartOf="@+id/kgEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/startHorizontal" />
 
     <EditText
         android:id="@+id/reps1"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="264dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="10:3.75"
         android:hint="Reps x Reps x Reps"
         android:inputType="text"
         android:shadowColor="@color/text_shadow"
@@ -120,15 +123,16 @@
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintBottom_toTopOf="@id/reps2"
+        app:layout_constraintEnd_toEndOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgEndGL"
+        app:layout_constraintTop_toBottomOf="@+id/startHorizontal" />
 
     <EditText
         android:id="@+id/upr2"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="18:5"
         android:fontFamily="sans-serif"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
@@ -137,54 +141,50 @@
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintBottom_toTopOf="@+id/upr3"
+        app:layout_constraintEnd_toStartOf="@+id/kgStartGL"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/upr1" />
 
     <EditText
         android:id="@+id/kg2"
-        android:layout_width="66dp"
-        android:layout_height="48dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="6:4.1"
         android:hint="  kg"
+        android:inputType="numberDecimal"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintBottom_toTopOf="@+id/kg3"
+        app:layout_constraintEnd_toStartOf="@+id/kgEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/kg1" />
 
     <EditText
         android:id="@+id/reps2"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="264dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="10:3.75"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        android:hint="Reps x Reps x Reps"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        app:layout_constraintBottom_toTopOf="@+id/reps3"
+        app:layout_constraintEnd_toEndOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgEndGL"
+        app:layout_constraintTop_toBottomOf="@+id/reps1" />
 
     <EditText
         android:id="@+id/upr3"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="18:5"
         android:fontFamily="sans-serif"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
@@ -193,18 +193,16 @@
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintBottom_toTopOf="@+id/upr4"
+        app:layout_constraintEnd_toStartOf="@+id/kgStartGL"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/upr2" />
 
     <EditText
         android:id="@+id/kg3"
-        android:layout_width="66dp"
-        android:layout_height="48dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="6:4.1"
         android:hint="  kg"
         android:inputType="numberDecimal"
         android:shadowColor="@color/text_shadow"
@@ -212,19 +210,16 @@
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintBottom_toTopOf="@+id/kg4"
+        app:layout_constraintEnd_toStartOf="@+id/kgEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/kg2" />
 
     <EditText
         android:id="@+id/reps3"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="264dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="10:3.75"
         android:hint="Reps x Reps x Reps"
         android:inputType="text"
         android:shadowColor="@color/text_shadow"
@@ -232,15 +227,16 @@
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintBottom_toTopOf="@+id/reps4"
+        app:layout_constraintEnd_toEndOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgEndGL"
+        app:layout_constraintTop_toBottomOf="@+id/reps2" />
 
     <EditText
         android:id="@+id/upr4"
-        android:layout_width="187dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="18:5"
         android:fontFamily="sans-serif"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
@@ -249,18 +245,16 @@
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintBottom_toTopOf="@+id/endHorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/kgStartGL"
+        app:layout_constraintStart_toStartOf="@id/buttonsStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/upr3" />
 
     <EditText
         android:id="@+id/kg4"
-        android:layout_width="66dp"
-        android:layout_height="48dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="6:4.1"
         android:hint="  kg"
         android:inputType="numberDecimal"
         android:shadowColor="@color/text_shadow"
@@ -268,29 +262,94 @@
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintBottom_toTopOf="@+id/endHorizontal"
+        app:layout_constraintEnd_toStartOf="@+id/kgEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgStartGL"
+        app:layout_constraintTop_toBottomOf="@+id/kg3" />
 
     <EditText
         android:id="@+id/reps4"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="264dp"
-        android:ems="10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="10:3.75"
+        android:hint="Reps x Reps x Reps"
+        android:inputType="text"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="2"
         android:shadowRadius="15"
         android:textColor="@color/whiteLight"
-        android:hint="Reps x Reps x Reps"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintBottom_toTopOf="@id/endHorizontal"
+        app:layout_constraintEnd_toEndOf="@id/buttonsEndGL"
+        app:layout_constraintStart_toEndOf="@+id/kgEndGL"
+        app:layout_constraintTop_toBottomOf="@+id/reps3" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="116dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.835" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleStartGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleEndGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/titleHorizontalGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.046" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonsStartGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonsEndGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonHorizontalGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kgStartGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kgEndGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.644" />
 </androidx.constraintlayout.widget.ConstraintLayout>

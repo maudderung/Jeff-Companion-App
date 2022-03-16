@@ -5,43 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/redBackground"
-    tools:context=".view.mainMenu.Program"
-    >
+    tools:context=".view.mainMenu.Program">
 
     <ImageView
         android:id="@+id/week12"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="524dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week11"
+        app:layout_constraintTop_toBottomOf="@+id/week10"
         app:srcCompat="@drawable/w12" />
 
     <ImageView
         android:id="@+id/week11"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="524dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/week12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week9"
         app:srcCompat="@drawable/w11" />
 
     <ImageView
         android:id="@+id/week2"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week1"
+        app:layout_constraintTop_toBottomOf="@+id/guideline3"
         app:srcCompat="@drawable/w2" />
 
     <TextView
         android:id="@+id/cycleLabel"
-        android:layout_width="41dp"
-        android:layout_height="33dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:shadowDx="4"
         android:shadowDy="2"
         android:shadowRadius="5"
@@ -49,122 +51,128 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintDimensionRatio="60:33"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/cycleInput2"
+        app:layout_constraintStart_toEndOf="@+id/guideline7" />
 
     <ImageView
         android:id="@+id/cont"
-        android:layout_width="291dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.519"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="30:7"
+        app:layout_constraintBottom_toBottomOf="@id/guideline5"
+        app:layout_constraintEnd_toEndOf="@id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
         app:srcCompat="@drawable/cont" />
 
     <ImageView
         android:id="@+id/week10"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="432dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week9"
+        app:layout_constraintTop_toBottomOf="@+id/week8"
         app:srcCompat="@drawable/w10" />
 
     <ImageView
         android:id="@+id/week9"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="432dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week11"
+        app:layout_constraintEnd_toStartOf="@+id/week10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week7"
         app:srcCompat="@drawable/w9" />
 
     <ImageView
         android:id="@+id/week7"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="340dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week9"
+        app:layout_constraintEnd_toStartOf="@+id/week8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week5"
         app:srcCompat="@drawable/w7" />
 
     <ImageView
         android:id="@+id/week8"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week7"
+        app:layout_constraintTop_toBottomOf="@+id/week6"
         app:srcCompat="@drawable/w8" />
 
     <ImageView
         android:id="@+id/week6"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week5"
+        app:layout_constraintTop_toBottomOf="@+id/week4"
         app:srcCompat="@drawable/w6" />
 
     <ImageView
         android:id="@+id/week5"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="248dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week7"
+        app:layout_constraintEnd_toStartOf="@+id/week6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week3"
         app:srcCompat="@drawable/w5" />
 
     <ImageView
         android:id="@+id/week3"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="156dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week5"
+        app:layout_constraintEnd_toStartOf="@+id/week4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week1"
         app:srcCompat="@drawable/w3" />
 
     <ImageView
         android:id="@+id/week4"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintBottom_toTopOf="@+id/week6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/week3"
+        app:layout_constraintTop_toBottomOf="@+id/week2"
         app:srcCompat="@drawable/w4" />
 
     <ImageView
         android:id="@+id/week1"
-        android:layout_width="190dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/week3"
+        app:layout_constraintDimensionRatio="190:75"
+        app:layout_constraintEnd_toStartOf="@+id/week2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline3"
         app:srcCompat="@drawable/w1" />
 
     <EditText
         android:id="@+id/cycleInput2"
-        android:layout_width="46dp"
-        android:layout_height="41dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="46:41"
         android:fontFamily="sans-serif"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
         android:shadowColor="@color/text_shadow"
         android:shadowDx="4"
         android:shadowDy="2"
@@ -172,24 +180,51 @@
         android:text=""
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintBottom_toTopOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.988"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954"
+        app:layout_constraintStart_toEndOf="@+id/cycleLabel"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="404dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="18dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/spinner_style"
         android:contentDescription="Change Program"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintDimensionRatio="42:6"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

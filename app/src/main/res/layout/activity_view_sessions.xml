@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/redBackground"
-    tools:context=".view.mainMenu.ViewSessionsActivity"
-    >
+    tools:context=".view.mainMenu.ViewSessionsActivity">
 
     <TextView
         android:id="@+id/dayTitle"
         android:layout_width="330dp"
         android:layout_height="61dp"
+        app:layout_constraintDimensionRatio="33:6"
         android:ems="10"
         android:fontFamily="@font/charleswrightbold"
         android:inputType=""
@@ -25,24 +25,20 @@
         android:textColor="@color/whiteLight"
         android:textSize="40sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/v11"
+        app:layout_constraintEnd_toEndOf="@id/v22"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintBottom_toTopOf="@id/list1gl"
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
-        android:layout_width="390dp"
-        android:layout_height="581dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/list1gl"
+        app:layout_constraintBottom_toTopOf="@id/list2gl">
 
         <ListView
             android:id="@+id/tSessionsList"
@@ -61,30 +57,68 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/removeWorkoutBtn"
-        android:layout_width="365dp"
-        android:layout_height="53dp"
-        android:text="Remove a workout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="0.94" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Spinner
         android:id="@+id/spinnerViewSessions"
-        android:layout_width="365dp"
-        android:layout_height="53dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="20:3.2"
         android:contentDescription="Change Program"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.607"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        style="@style/spinner_style"
+        app:layout_constraintBottom_toTopOf="@id/removeWorkoutBtn"
+        app:layout_constraintEnd_toStartOf="@id/v22"
+        app:layout_constraintStart_toEndOf="@id/v11"
+        app:layout_constraintTop_toTopOf="@id/list2gl"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/removeWorkoutBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="20.5:3.3"
+        android:text="Remove a workout"
+        app:layout_constraintBottom_toTopOf="@id/hgl"
+        app:layout_constraintEnd_toEndOf="@id/v22"
+        app:layout_constraintStart_toEndOf="@id/v11"
+        app:layout_constraintTop_toBottomOf="@id/spinnerViewSessions" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hgl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list1gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.115" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list2gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
