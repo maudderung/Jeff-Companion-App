@@ -78,6 +78,7 @@ class viewDayActivity : AppCompatActivity() {
         val exerciseList = ArrayList<Exercise>()
         val dayTitle: TextView = findViewById(R.id.dayTitle)
         val cycle:String
+        val programChoice: String
         val extras = intent.extras
         val day = extras!!.getString("day")
         val dateLabel=findViewById<TextView>(R.id.dateTitle)
@@ -85,8 +86,9 @@ class viewDayActivity : AppCompatActivity() {
         findFields()
 
             cycle= extras.getString("cycle").toString()
+            programChoice=extras.getString("program").toString()
             dayTitle.text=day
-            readFile(day, exerciseList, cycle)
+            readFile(day, exerciseList, cycle, programChoice)
             dateLabel.text=dateString
             setAllExercises(exerciseList)
 
@@ -120,9 +122,9 @@ class viewDayActivity : AppCompatActivity() {
         kg.setText(exercise.kg.toString())
     }
 
-    private fun readFile(day: String?, exerciseList: ArrayList<Exercise>, cycle:String){
+    private fun readFile(day: String?, exerciseList: ArrayList<Exercise>, cycle:String,programChoice : String){
         var line=0
-        val inputStream = File(applicationContext.filesDir.toString() + "/${GeneralInfo.program}/${cycle}/", "$day.txt").inputStream()
+        val inputStream = File(applicationContext.filesDir.toString() + "/${programChoice}/${cycle}/", "$day.txt").inputStream()
         val lineList = mutableListOf<String>()
         inputStream.bufferedReader().forEachLine { lineList.add(it) }
         for(s in lineList) {

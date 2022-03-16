@@ -31,7 +31,7 @@ class ViewSessionsActivity : AppCompatActivity() {
         if (spinner != null) {
             val adapter = ArrayAdapter(
                 this,
-                android.R.layout.simple_spinner_dropdown_item, programs
+                R.layout.spinner_white_text, R.id.textviewspinner, programs
             )
             spinner.adapter = adapter
             spinner.setSelection(programs.indexOf(GeneralInfo.program))
@@ -51,9 +51,7 @@ class ViewSessionsActivity : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     programChoice= GeneralInfo.program
                     initList(listView)
-
                 }
-
             }
         }
     }
