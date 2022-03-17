@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view.train
+package com.example.jeffnippard.viewViewmodel.train
 
 import android.content.Intent
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view.mainMenu
+package com.example.jeffnippard.viewViewmodel.mainMenu
 
 import android.os.Bundle
 import android.widget.EditText
@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import com.example.jeffnippard.model.Exercise
-import com.example.jeffnippard.model.GeneralInfo
 import java.io.File
 
 

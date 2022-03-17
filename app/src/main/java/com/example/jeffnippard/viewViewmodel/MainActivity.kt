@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view
+package com.example.jeffnippard.viewViewmodel
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,10 +6,10 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import com.example.jeffnippard.model.GeneralInfo
-import com.example.jeffnippard.view.mainMenu.CalculatorActivity
-import com.example.jeffnippard.view.mainMenu.Program
-import com.example.jeffnippard.view.mainMenu.ViewSessionsActivity
-import com.example.jeffnippard.view.mainMenu.days12Activity
+import com.example.jeffnippard.viewViewmodel.mainMenu.CalculatorActivity
+import com.example.jeffnippard.viewViewmodel.mainMenu.Program
+import com.example.jeffnippard.viewViewmodel.mainMenu.ViewSessionsActivity
+import com.example.jeffnippard.viewViewmodel.mainMenu.days12Activity
 import java.io.BufferedReader
 import java.io.File
 

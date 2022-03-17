@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view.mainMenu
+package com.example.jeffnippard.viewViewmodel.mainMenu
 
 import android.content.Context
 import android.os.Bundle

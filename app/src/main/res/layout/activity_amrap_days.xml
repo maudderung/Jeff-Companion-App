@@ -7,7 +7,7 @@
     android:background="@color/redBackground"
     android:configChanges="orientation"
     android:screenOrientation="portrait"
-    tools:context=".view.train.amrapDaysActivity">
+    tools:context=".viewViewmodel.train.amrapDaysActivity">
 
     <TextView
         android:id="@+id/weekTitle"

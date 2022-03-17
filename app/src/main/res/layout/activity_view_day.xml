@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/redBackground"
-    tools:context=".view.mainMenu.viewDayActivity">
+    tools:context=".viewViewmodel.mainMenu.viewDayActivity">
 
     <EditText
         android:id="@+id/kg9"

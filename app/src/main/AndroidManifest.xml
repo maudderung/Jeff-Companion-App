@@ -19,62 +19,62 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JeffNippard">
         <activity
-            android:name=".view.mainMenu.removeWorkoutActivity"
+            android:name=".viewViewmodel.mainMenu.removeWorkoutActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:exported="false" />
         <activity
-            android:name=".view.mainMenu.days12Activity"
+            android:name=".viewViewmodel.mainMenu.days12Activity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.mainMenu.Program"
+            android:name=".viewViewmodel.mainMenu.Program"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.mainMenu.viewDayActivity"
+            android:name=".viewViewmodel.mainMenu.viewDayActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.train.amrapDayActivity"
+            android:name=".viewViewmodel.train.amrapDayActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.train.amrapDaysActivity"
+            android:name=".viewViewmodel.train.amrapDaysActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.train.trainActivity"
+            android:name=".viewViewmodel.train.trainActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.train.daysActivity"
+            android:name=".viewViewmodel.train.daysActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.mainMenu.ProgramViewActivity"
+            android:name=".viewViewmodel.mainMenu.ProgramViewActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.mainMenu.ViewSessionsActivity"
+            android:name=".viewViewmodel.mainMenu.ViewSessionsActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.mainMenu.CalculatorActivity"
+            android:name=".viewViewmodel.mainMenu.CalculatorActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".view.MainActivity"
+            android:name=".viewViewmodel.MainActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait">

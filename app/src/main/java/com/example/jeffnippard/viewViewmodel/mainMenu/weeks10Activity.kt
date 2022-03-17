@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view.mainMenu
+package com.example.jeffnippard.viewViewmodel.mainMenu
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,20 +8,22 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import com.example.jeffnippard.model.GeneralInfo
-import com.example.jeffnippard.view.MainActivity
-import com.example.jeffnippard.view.train.daysActivity
-import com.example.jeffnippard.view.train.trainActivity
+import com.example.jeffnippard.viewViewmodel.MainActivity
+import com.example.jeffnippard.viewViewmodel.train.amrapDayActivity
+import com.example.jeffnippard.viewViewmodel.train.amrapDaysActivity
+import com.example.jeffnippard.viewViewmodel.train.daysActivity
+import com.example.jeffnippard.viewViewmodel.train.trainActivity
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-
-class days12Activity : AppCompatActivity() {
+@Suppress("SpellCheckingInspection")
+class Program : AppCompatActivity() {
     @SuppressLint("SimpleDateFormat")
     val date = SimpleDateFormat("dd.MM.yy")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_weeks12)
+        setContentView(R.layout.activity_weeks10)
         val bWeek1 = findViewById<ImageView>(R.id.week1)
         val bWeek2 = findViewById<ImageView>(R.id.week2)
         val bWeek3 = findViewById<ImageView>(R.id.week3)
@@ -32,10 +34,8 @@ class days12Activity : AppCompatActivity() {
         val bWeek8 = findViewById<ImageView>(R.id.week8)
         val bWeek9 = findViewById<ImageView>(R.id.week9)
         val bWeek10 = findViewById<ImageView>(R.id.week10)
-        val bWeek11 = findViewById<ImageView>(R.id.week11)
-        val bWeek12 = findViewById<ImageView>(R.id.week12)
         val spinner = findViewById<Spinner>(R.id.spinner)
-        val cycleInput = findViewById<EditText>(R.id.cycleInput2)
+        val cycleInput = findViewById<EditText>(R.id.cycleInput)
         val cont = findViewById<ImageView>(R.id.cont)
         val case = intent.getStringExtra("train")
         if (File(applicationContext.filesDir.toString() + "/cycleInfo.txt").exists()) {
@@ -111,39 +111,31 @@ class days12Activity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 bWeek10.setOnClickListener {
-                    val intent = Intent(this, daysActivity::class.java)
+                    val intent = Intent(this, amrapDaysActivity::class.java)
                     GeneralInfo.week = "Week 10"
                     GeneralInfo.weekInt = 10
                     initCycle(cycleInput)
                     startActivity(intent)
                 }
-                bWeek11.setOnClickListener {
-                    val intent = Intent(this, daysActivity::class.java)
-                    GeneralInfo.week = "Week 11"
-                    GeneralInfo.weekInt = 11
-                    initCycle(cycleInput)
-                    startActivity(intent)
-                }
-                bWeek12.setOnClickListener {
-                    val intent = Intent(this, daysActivity::class.java)
-                    GeneralInfo.week = "Week 12"
-                    GeneralInfo.weekInt = 12
-                    initCycle(cycleInput)
-                    startActivity(intent)
-                }
                 cont.setOnClickListener {
                     val intent = Intent(this, trainActivity::class.java)
+                    initCycle(cycleInput)
                     val day = continueWorkout()
-                    if (GeneralInfo.week == "Week 13") {
-                        Toast.makeText(this, "Cycle finished.", Toast.LENGTH_SHORT).show()
-                        GeneralInfo.week = "Week 1"
-                        GeneralInfo.weekInt = 1
-                        GeneralInfo.cycle++
-                        updateCycle()
-                        intent.setClass(this, MainActivity::class.java)
-                        startActivity(intent)
+                    if (GeneralInfo.week == "Week 10") {
+                        intent.setClass(this, amrapDayActivity::class.java)
+                        if (day == "Day 4") {
+                            Toast.makeText(this, "Cycle finished.", Toast.LENGTH_SHORT).show()
+                            GeneralInfo.week = "Week 1"
+                            GeneralInfo.weekInt = 1
+                            GeneralInfo.cycle++
+                            updateCycle()
+                            intent.setClass(this, MainActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            intent.putExtra("day", day)
+                            startActivity(intent)
+                        }
                     } else {
-                        initCycle(cycleInput)
                         intent.putExtra("day", day)
                         startActivity(intent)
                     }
@@ -210,18 +202,6 @@ class days12Activity : AppCompatActivity() {
                     GeneralInfo.week = "Week 10"
                     startActivity(intent)
                 }
-                bWeek11.setOnClickListener {
-                    val intent = Intent(this, ProgramViewActivity::class.java).apply {
-                    }
-                    GeneralInfo.week = "Week 11"
-                    startActivity(intent)
-                }
-                bWeek12.setOnClickListener {
-                    val intent = Intent(this, ProgramViewActivity::class.java).apply {
-                    }
-                    GeneralInfo.week = "Week 12"
-                    startActivity(intent)
-                }
                 cont.setOnClickListener {
                     val intent = Intent(this, ProgramViewActivity::class.java).apply {
                     }
@@ -234,13 +214,6 @@ class days12Activity : AppCompatActivity() {
                 cont.setImageResource(id)
             }
         }
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        val intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
     }
 
     private fun initCycle(cycleInput: EditText) {
@@ -304,11 +277,9 @@ class days12Activity : AppCompatActivity() {
                 }
             sessions.sort()
             doubledigitList.sort()
-
-            s = if (doubledigitList.isNotEmpty()) {
+            s = if(doubledigitList.isNotEmpty()){
                 doubledigitList[doubledigitList.size - 1]
-
-            } else {
+            }else{
                 sessions[sessions.size - 1]
             }
             if (s.length == 13) {
@@ -330,6 +301,7 @@ class days12Activity : AppCompatActivity() {
                 "${GeneralInfo.week} $dayToCheck.txt"
             ).exists()
         ) {
+
             day = "Day 1"
         } else {
             val inputStream = File(
@@ -346,25 +318,21 @@ class days12Activity : AppCompatActivity() {
             }
             if (date.format(Date()).equals(dateString)) {//if you're working out today
                 day = dayToCheck
+
             } else {
                 val num = dayToCheck[dayToCheck.length - 1]
                 day = "Day ${num.digitToInt() + 1}"
+
                 if (day == "Day 5") {
                     day = "Day 1"
-                    if (GeneralInfo.week == "Week 12") {
-                        GeneralInfo.week = "Week 13"
-                        GeneralInfo.weekInt = 13
-                    } else {
-                        GeneralInfo.weekInt =
-                            Integer.parseInt(GeneralInfo.week[GeneralInfo.week.length - 1].toString()) + 1
-                        GeneralInfo.week = "Week ${GeneralInfo.weekInt}"
-                    }
+                    GeneralInfo.weekInt = Integer.parseInt(GeneralInfo.week[GeneralInfo.week.length - 1].toString())+1
+                    GeneralInfo.week = "Week ${GeneralInfo.weekInt}"
+
                 }
             }
         }
         return day
     }
-
 
     private fun initSpinner(spinner: Spinner) {
         val programs = resources.getStringArray(R.array.programs)
@@ -387,24 +355,25 @@ class days12Activity : AppCompatActivity() {
                     var flag = true
                     GeneralInfo.program = programs[position]
                     write(GeneralInfo.program)
-                    var intent = Intent(this@days12Activity, Program::class.java)
+                    var intent = Intent(this@Program, Program::class.java)
                     when (programs[position]) {
                         "Powerbuilding 2.0 4x" -> {
-                            intent = Intent(this@days12Activity, days12Activity::class.java)
+                            intent = Intent(this@Program, days12Activity::class.java)
                             flag = false
                         }
                     }
                     intent.putExtra("train", case)
-                    if (flag)
+                    if (!flag)
                         startActivity(intent)
                 }
 
-                override fun onNothingSelected(parent: AdapterView<*>?) {
+                override fun onNothingSelected(parent: AdapterView<*>) {
+
                 }
+
             }
         }
     }
-
 
     private fun makeDir() {
         val directory = File(applicationContext.filesDir.toString() + "/Program/")
@@ -422,6 +391,12 @@ class days12Activity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+    }
 }
 
 

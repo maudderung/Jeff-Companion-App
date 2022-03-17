@@ -1,4 +1,4 @@
-package com.example.jeffnippard.view.train
+package com.example.jeffnippard.viewViewmodel.train
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.jeffnippard.R
 import com.example.jeffnippard.model.Exercise
 import com.example.jeffnippard.model.GeneralInfo
-import com.example.jeffnippard.view.mainMenu.CalculatorActivity
-import com.example.jeffnippard.view.mainMenu.ProgramViewActivity
-import com.example.jeffnippard.view.mainMenu.viewDayActivity
+import com.example.jeffnippard.viewViewmodel.mainMenu.CalculatorActivity
+import com.example.jeffnippard.viewViewmodel.mainMenu.ProgramViewActivity
+import com.example.jeffnippard.viewViewmodel.mainMenu.viewDayActivity
 import java.io.File
 import java.io.FileNotFoundException
 import java.text.SimpleDateFormat

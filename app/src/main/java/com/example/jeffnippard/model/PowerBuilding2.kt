@@ -83,7 +83,7 @@ class PowerBuilding2(
         upr4.setText("4.Chest-Supported Row")
         upr5.setText("5.Rope Overhead Triceps Extension")
          upr5.textSize = 12.5F
-         upr5.setText("6.Egyptian Lateral Raise")
+         upr6.setText("6.Egyptian Lateral Raise")
 
      }
 
@@ -186,7 +186,7 @@ class PowerBuilding2(
 
         kg1.hint = "75-80%"
         kg2.hint = "70%"
-        kg3.hint = "890%"
+        kg3.hint = "90%"
         kg4.hint = "80%"
         kg5.hint = "65%"
         kg6.hint = "  kg"
@@ -1031,7 +1031,7 @@ class PowerBuilding2(
         kg7.hint = "  kg"
     }
 
-    override  fun setWeek12Day4() {
+    override fun setWeek12Day4() {
         upr1.setText("1.Weighted Eccentric-Overload Pull-Up")
         upr1.textSize=12.5F
         upr2.setText("2.Eccentric-Accentutated Pull-Up")
