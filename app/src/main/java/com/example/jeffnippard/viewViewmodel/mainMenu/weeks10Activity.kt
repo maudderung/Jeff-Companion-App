@@ -259,20 +259,10 @@ class Program : AppCompatActivity() {
         } else {
             File(filesDir.toString() + "/${GeneralInfo.program}/Cycle ${GeneralInfo.cycle}").listFiles()
                 .forEach {
-                    if (File(it.toString()).name.length == 17) {
-                        doubledigitList.add(
-                            File(it.toString()).name.substring(
-                                0,
-                                File(it.toString()).name.length - 4
-                            )
-                        )
+                    if (File(it.toString()).name.length == 17) { // list for double digit weeks
+                        doubledigitList.add(File(it.toString()).name.substring(0, File(it.toString()).name.length - 4))
                     } else {
-                        sessions.add(
-                            File(it.toString()).name.substring(
-                                0,
-                                File(it.toString()).name.length - 4
-                            )
-                        )
+                        sessions.add(File(it.toString()).name.substring(0, File(it.toString()).name.length - 4))//singledigits
                     }
                 }
             sessions.sort()
@@ -288,6 +278,8 @@ class Program : AppCompatActivity() {
                 GeneralInfo.week = s.substring(0, 6)
             }
         }
+        GeneralInfo.weekInt =
+            Integer.parseInt(GeneralInfo.week[GeneralInfo.week.length - 1].toString())
         return s.substring(GeneralInfo.week.length + 1, s.length)
     }
 

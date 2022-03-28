@@ -317,6 +317,8 @@ class days12Activity : AppCompatActivity() {
                 GeneralInfo.week = s.substring(0, 6)
             }
         }
+        GeneralInfo.weekInt =
+            Integer.parseInt(GeneralInfo.week[GeneralInfo.week.length - 1].toString())
         return s.substring(GeneralInfo.week.length + 1, s.length)
     }
 

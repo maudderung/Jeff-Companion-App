@@ -320,12 +320,13 @@ class trainActivity : AppCompatActivity() {
             if(File(filesDir.toString()+"/${GeneralInfo.program}/Cycle ${(GeneralInfo.cycle)}/Week ${(GeneralInfo.weekInt)-2} ${day}.txt").exists()){
             val intent= Intent(this, viewDayActivity::class.java)
             val extras = Bundle()
+                extras.putString("program", "${GeneralInfo.program}")
             extras.putString("cycle", "Cycle ${(GeneralInfo.cycle)}")
             extras.putString("day", "Week ${(GeneralInfo.weekInt)-2} $day")
             intent.putExtras(extras)
             startActivity(intent)}
             else{
-                Toast.makeText(this,"No such day.",Toast.LENGTH_SHORT).show()
+               Toast.makeText(this,"No such day.",Toast.LENGTH_SHORT).show()
             }
         }
         calcBtn.setOnClickListener {
